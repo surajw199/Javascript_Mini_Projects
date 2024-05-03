@@ -1,0 +1,142 @@
+/* body{
+    margin:0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    height: 100vh;
+     background-image:url('D:/Javascript_Practice_Nikhil_Sir/bg.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div{
+    width: 500px;
+    position:inherit ;
+    top: 50%;
+    background-color: 50%;
+    background-color: rgba(0,0,0,0.5);
+    transform: translate(-50%,-50%);
+    padding: 5px;
+    box-shadow: 2px 2px 2px #919191 ;
+
+
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.text{
+    text-align: left;
+    margin-left: 100px;
+    color: #fff;
+}
+#weight, #height{
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 200;
+    border: 1px solid;
+    width: 300px;
+    background-color: transparent;
+    border-radius: 2px;
+    outline: none;
+
+}
+#result{
+    color: #fff;
+
+
+}
+#btn{
+    font-size: inherit;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    background-color: #828588;
+    width: 150px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#btn:hover{
+    box-shadow: 1px 1px 10px #341f97;
+
+}
+#info{
+    color: #fff;
+    font-size: 50px;
+}
+ */
+ /* body {
+	font-family: Verdana, Geneva, sans-serif;
+} */
+a:link {
+	text-decoration: none;
+	color: #76323F;
+}
+a:visited {
+	color: #76323F;
+}
+a:hover {
+	text-decoration: underline;
+	color: #76323F;
+}
+a:active {
+	color: #76323F;
+}
+.form {
+	height: 60%;
+	width: 60%;
+}
+#tabs {
+	width: 400px;
+	margin: auto;
+}
+#categories {
+	margin: auto;
+	width: 30%;
+}
+h1 {
+	text-align: center;
+	margin: auto;
+	color: black;
+}
+h4 {
+	text-align: center;
+}
+.pbmi {
+	border: 1px solid white;
+	padding: 30px;
+	border-radius: 25px;
+	background: #aed2da;
+	padding: 20px;
+	color: white;
+}
+.pbmi2 {
+	border: 1px solid white;
+	padding: 30px;
+	border-radius: 25px;
+	background: #e36d84;
+	padding: 20px;
+	color: white;
+}
+
+
+label.error{
+     font-weight: bold;
+     font-style: italic;
+		 font-size: 11px;
+		 color:red;
+		 margin-left:5px;
+}
+
+
+
+header {
+	color: #555;
+	text-shadow: 0px 2px 3px #222;
+}

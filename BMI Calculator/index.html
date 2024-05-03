@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html>
+
+
+<!-- start head -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Eva Huzieran">
+
+
+<!-- Title and header images -->
+  <title>BMI Calculator </title>
+
+  <header>
+
+</header>
+
+
+
+  <!-- Style/Script Sources -->
+  <link href="stylesheet/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="theme/jquery-ui.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+
+
+  <!-- Start Script -->
+<script>
+"use strict"
+
+  $(document).ready(function() { //start ready function
+
+
+  	$("#tabs").tabs(); //For multiple tabs -metric/imperial
+  	$("#spinner").spinner({//spinner
+      min: 1,
+      });
+
+
+  	$("#heightInFeet").selectmenu({ //select menu for heightInFeet
+  		width: 100 //changes width of box
+  	});
+  	$("#heightInInches").selectmenu({ //select menu for heightInInches
+  		width: 100 //changes width of box
+  	});
+
+
+
+  	//Metric BMI Calculator
+  	$('#metricbmi').validate({ //validates metric calculator
+  	});
+
+  	$("#metricbmi").submit(function() { //start submit function for metricbmi
+  		event.preventDefault(); //prevents going to new page
+
+
+  		if (!$("#metricbmi").valid()) return; // if NOT VALID return
+  		var weightInPounds = $("[name='weightInPounds']").val();
+  		var heightInFeet = $("[name='heightInFeet']").val();
+  		var heightInInches = $("[name='heightInInches']").val();
+  		var heightInInches = +(heightInFeet * 12) + +heightInInches;
+  		var metricbmi = (weightInPounds * 703) / (heightInInches * heightInInches);
+
+
+  		$("#BMIMetricalc").val(metricbmi.toFixed(1)); //displays metric bmi after calculations
+
+  	}); //end submit function
+  }); //end ready function
+
+
+
+  //Imperial BMI Calculator
+  $(document).ready(function() {//start ready function
+
+
+  	$('#imperialbmi').validate({ //validates
+  	});
+
+  	$("#imperialbmi").submit(function() {
+  		event.preventDefault(); //prevents going to new page
+
+
+  		if (!$("#imperialbmi").valid()) return; // if NOT VALID return
+  		var weightInKilos = $("[name='weightInKilos']").val();
+  		var heightInCentimeters = $("[name='heightInCentimeters']").val();
+  		var heightInMeters = heightInCentimeters / 100;
+  		var imperialbmi = (weightInKilos) / (heightInMeters * heightInMeters);
+
+
+
+  		$("#BMIImperialcalc").val(imperialbmi.toFixed(1)); //displays imperial bmi after calculation
+
+  	}); //end submit function
+  }); //end ready function
+
+  </script>
+<!-- end script -->
+
+
+</head>
+ <!-- end head -->
+
+ <!-- start body -->
+ <body>
+ 	<h1>Calculate Your BMI!</h1><br>
+ 	<br>
+
+
+ 	<!-- Tabs-->
+ 	<div id="tabs">
+ 		<ul>
+ 			<li>
+ 				<a href="#metric">Metric</a>
+ 			</li>
+ 			<li>
+ 				<a href="#imperial">Imperial</a>
+ 			</li>
+ 		</ul>
+
+    <!--Metric-->
+ 		<div id="metric">
+ 			<center>
+ 				<form id="metricbmi" name="metricbmi">
+ 					<fieldset>
+
+
+ 						<!-- height -->
+ 						<label class="label" for="height">Height:</label> <select id="heightInFeet" name="heightInFeet">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option  selected="selected">5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+ 						</select> Feet<br>
+ 						<br>
+ 						<select id="heightInInches" name="heightInInches">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option  selected="selected">5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+ 						</select> Inches<br>
+ 						<br>
+
+
+ 						<!--weight -->
+ 						 <label class="label" for="weightInPounds">Weight:</label> <input class="required digits" id="weightInPounds" name="weightInPounds" size="4" title="Weight is required." type="weightinpounds"> lbs&nbsp;<br>
+ 						<br>
+
+
+ 						<!--submit-->
+ 						 <input id="calculateBMI" name="verify" type="submit" value="Calculate BMI">
+ 						<p>Your BMI:</p><input class="calculations" id="BMIMetricalc" readonly size="4" type="text">
+ 					</fieldset>
+ 				</form>
+ 			</center>
+ 		</div>
+
+    <!-- Imperial -->
+ 		<div id="imperial">
+ 			<center>
+ 				<form id="imperialbmi" name="imperialbmi">
+ 					<fieldset>
+
+
+ 						<!-- height -->
+ 						<label class="label" for="heightInCentimeters">Height:</label> <input class="required digits" id="spinner" name="heightInCentimeters" size="4" title="Height is required." type="text">&nbsp; Cm<br>
+ 						<br>
+
+
+ 						<!--weight -->
+ 						 <label class="label" for="weightInKilos">Weight:</label> <input class="required digits" id="weightInKilos" name="weightInKilos" size="4" title="Weight is required." type="weightinkilos">&nbsp; Kg<br>
+ 						<br>
+
+
+ 						<!--submit-->
+ 						 <input id="calculateBMI" name="verify" type="submit" value="Calculate BMI">
+ 						<p>Your BMI: <input class="calculations" id="BMIImperialcalc" readonly size="10" type="text"></p>
+ 					</fieldset>
+ 				</form>
+ 			</center>
+ 		</div>
+ 	</div>
+
+  <!--BMI categories -->
+ 	<div id="categories">
+ 		<h4>BMI Categories:</h4>
+ 		<p class="pbmi"><b>Underweight:</b> &lt;18.5</p>
+ 		<p class="pbmi2"><b>Normal weight:</b> 18.5–24.9</p>
+ 		<p class="pbmi"><b>Overweight:</b> 25–29.9</p>
+ 		<p class="pbmi2"><b>Obesity:</b> BMI of 30 or greater</p>
+ 	</div>
+
+  <!-- end body -->
+ </body>
+ </html>
