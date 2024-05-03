@@ -16,6 +16,7 @@ Technologies Employed:
 HTML: For the webpage's content and structure.
 Layout, colors, and animations are all part of the visual presentation and styling that CSS handles.
 JavaScript: For the countdown timer's functionality, which includes date computation and real-time updates.
+
 How to Apply:
 
 Make a local copy of the repository on your computer.
