@@ -23,6 +23,6 @@ Make a local copy of the repository on your computer.
 Launch the index.html file in the web browser of your choice.
 Use the input forms to specify the date and time of your countdown.
 As the countdown to your chosen event approaches, watch the countdown timer update in real-time.
-Contributions: We would appreciate any help with this project! Your suggestions, whether they be for new features, bug reports, or pull requests, are important to us and will help make the countdown timer better for everyone.
+Contributions: I would appreciate any help with this project! Your suggestions, whether they be for new features, bug reports, or pull requests, are important to me and will help make the countdown timer better for everyone.
 
 
